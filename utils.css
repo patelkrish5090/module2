@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-size: cover;
+    background-image:url("images/backdrop.jpg");
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+}
+

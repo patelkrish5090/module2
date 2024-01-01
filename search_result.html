@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github User Search</title>
+    <link rel="stylesheet" type="text/css "href="css/resultpage_design.css">
+    <link rel="stylesheet" type="text/css "href="css/utils.css">
+</head>
+<body>
+    <script src="backend.js"></script>
+    <header class="header">
+        <a href="index.html" class="logo">
+            <img src="images/github-mark-white.png" alt="Github User Search" width="25" height="25">
+        </a>
+        <nav class="navbar">
+            <div class="search_field" id="search_bar">
+                <img src="images/search.png" width="12" height="12" id="search_icon">
+                <input type="text" placeholder="search user here" id="search_entry" oninput="cancel_show()" onclick="border_color_change()" onkeypress="search_result()">
+                <button id="cancel_icon"><img src="images/cancel.png" width="12" height="12"></button>
+            </div>
+        </nav>
+    </header>
+    <div class="main_body"></div>
+    <footer class="footer">
+
+    </footer>
+</body>
+</html>
