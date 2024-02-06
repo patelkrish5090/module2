@@ -1,5 +1,5 @@
 var githubToken =
-  "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";
+  "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";
 
 var searchEntry = document.getElementById("search_entry");
 
