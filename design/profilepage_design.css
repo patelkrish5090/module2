@@ -1,0 +1,67 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.popup-container {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  /* background-color: #fff; */
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  backdrop-filter: blur(50px);
+  color: white;
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.close-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 18px;
+  color: white;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.username {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.follower-following {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.repo-list {
+  max-height: 20vh;
+  overflow-y: scroll;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.repo-list-item {
+  font-size: 14px;
+  margin-bottom: 5px;
+}

@@ -1,29 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Github User Search</title>
-    <link rel="stylesheet" type="text/css "href="css/resultpage_design.css">
-    <link rel="stylesheet" type="text/css "href="css/utils.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      type="text/css "
+      href="design/resultpage_design.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="design/profilepage_design.css"
+    />
+    <link rel="stylesheet" type="text/css " href="utils.css" />
+  </head>
+  <body>
+    <!-- Scripts for Site -->
     <script src="backend.js"></script>
-    <header class="header">
-        <a href="index.html" class="logo">
-            <img src="images/github-mark-white.png" alt="Github User Search" width="25" height="25">
-        </a>
-        <nav class="navbar">
-            <div class="search_field" id="search_bar">
-                <img src="images/search.png" width="12" height="12" id="search_icon">
-                <input type="text" placeholder="search user here" id="search_entry" oninput="cancel_show()" onclick="border_color_change()" onkeypress="search_result()">
-                <button id="cancel_icon"><img src="images/cancel.png" width="12" height="12"></button>
-            </div>
-        </nav>
-    </header>
-    <div class="main_body"></div>
-    <footer class="footer">
+    <script src="data_fetch.js"></script>
+    <script src="data_show.js"></script>
+    <script>
+      function openPopup() {
+        document.getElementById("popup").style.display = "block";
+      }
 
-    </footer>
-</body>
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
+    </script>
+
+    <!-- Navbar -->
+    <header class="header">
+      <a href="index.html" class="logo">
+        <img
+          src="images/github-mark-white.png"
+          alt="Github User Search"
+          width="25"
+          height="25"
+        />
+      </a>
+      <nav class="navbar">
+        <div class="search_field" id="search_bar">
+          <img
+            src="images/search.png"
+            width="24"
+            height="24"
+            id="search_icon"
+          />
+          <input
+            type="text"
+            placeholder="search user here"
+            id="search_entry"
+            oninput="cancel_show()"
+            onclick="border_color_change()"
+            onkeypress="search_result(event)"
+          />
+          <button id="cancel_icon">
+            <img src="images/cancel.png" width="12" height="12" />
+          </button>
+        </div>
+      </nav>
+    </header>
+    <div id="tableContainer">
+      <table id="userTable">
+        <thead id="tableHeader">
+          <tr>
+            <th>Users Found</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <tr>
+            <td onclick="onUserClick(event)">User1</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="popup" class="popup-container">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <div class="popup-content">
+        <img
+          src="user-profile-pic.jpg"
+          alt="User Profile"
+          class="profile-pic"
+        />
+        <div class="username">Username</div>
+        <div class="follower-following">
+          <div>User - Follower: <span id="followerCount">100</span></div>
+          <div>User - Following: <span id="followingCount">50</span></div>
+        </div>
+        <div class="repo-list">
+          <strong>User Repositories:</strong>
+          <ul id="repoList">
+            <li class="repo-list-item">Repo 1</li>
+            <li class="repo-list-item">Repo 2</li>
+            <li class="repo-list-item">Repo 3</li>
+            <!-- Add more repositories as needed -->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <footer class="footer"></footer>
+  </body>
 </html>
